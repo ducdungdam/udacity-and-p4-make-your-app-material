@@ -1,6 +1,7 @@
 <com.example.xyzreader.ui.DrawInsetsFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/draw_insets_frame_layout"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/draw_insets_frame_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -42,7 +43,7 @@
                 android:elevation="2dp"
                 android:layout_marginTop="@dimen/detail_card_top_margin">
 
-                <LinearLayout
+                <android.support.constraint.ConstraintLayout
                     android:id="@+id/meta_bar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -68,12 +69,24 @@
                         android:lineSpacingMultiplier="0.9" />
 
                     <TextView
-                        android:id="@+id/article_byline"
-                        style="?android:attr/textAppearanceSmall"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="#8fff" />
-                </LinearLayout>
+                      android:id="@+id/article_byline_date"
+                      style="?android:attr/textAppearanceSmall"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:textColor="#8fff"
+                      app:layout_constraintStart_toStartOf="@+id/article_title"
+                      app:layout_constraintTop_toBottomOf="@+id/article_title"
+                      tools:text="Jan 1, 1908 by "/>
+                    <TextView
+                      android:id="@+id/article_byline_author"
+                      style="?android:attr/textAppearanceSmall"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:textColor="#fff"
+                      app:layout_constraintStart_toEndOf="@+id/article_byline_date"
+                      app:layout_constraintTop_toBottomOf="@+id/article_title"
+                      tools:text="Yei Theodora Ozaki"/>
+                </android.support.constraint.ConstraintLayout>
 
                 <TextView
                     android:id="@+id/article_body"
