@@ -65,7 +65,7 @@
             android:paddingBottom="@dimen/detail_metabar_title_bottom_padding"
             android:fontFamily="sans-serif-condensed"
             android:lineSpacingMultiplier="0.9"
-            android:textColor="#fff"
+            android:textColor="@color/text_inverted"
             android:textSize="@dimen/detail_title_text_size"/>
 
           <TextView
@@ -73,7 +73,7 @@
             style="?android:attr/textAppearanceSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#8fff"
+            android:textColor="@color/text_secondary"
             app:layout_constraintStart_toStartOf="@+id/article_title"
             app:layout_constraintTop_toBottomOf="@+id/article_title"
             tools:text="Jan 1, 1908 by "/>
@@ -82,7 +82,7 @@
             style="?android:attr/textAppearanceSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#fff"
+            android:textColor="@color/text_inverted"
             app:layout_constraintStart_toEndOf="@+id/article_byline_date"
             app:layout_constraintTop_toBottomOf="@+id/article_title"
             tools:text="Yei Theodora Ozaki"/>
@@ -97,7 +97,7 @@
           android:layout_marginRight="@dimen/detail_inner_horiz_margin"
           android:paddingBottom="@dimen/detail_body_bottom_margin"
           android:lineSpacingMultiplier="@fraction/detail_body_line_spacing_multiplier"
-          android:textColor="@color/text_secondary"
+          android:textColor="@color/text"
           android:textColorLink="@color/accent"
           android:textSize="@dimen/detail_body_text_size"/>
 

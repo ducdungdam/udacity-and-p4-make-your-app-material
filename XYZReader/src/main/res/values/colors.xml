@@ -23,5 +23,6 @@
     <color name="primary">#607D8B</color>
     <color name="accent">#FFC107</color>
     <color name="text">#212121</color>
+    <color name="text_inverted">#fff</color>
     <color name="text_secondary">#757575</color>
 </resources>
