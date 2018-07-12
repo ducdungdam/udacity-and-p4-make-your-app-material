@@ -14,14 +14,12 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 import com.example.xyzreader.R;
 import com.example.xyzreader.data.ArticleLoader;
 import com.example.xyzreader.data.ItemsContract;
 import com.example.xyzreader.data.UpdaterService;
 import com.example.xyzreader.utils.FormatUtils;
-import com.squareup.picasso.Picasso;
 
 /**
  * An activity representing a list of Articles. This activity has different presentations for
@@ -142,11 +140,10 @@ public class ArticleListActivity extends AppCompatActivity implements
                 mCursor.getString(ArticleLoader.Query.AUTHOR)
             ));
 
-            Picasso.with(holder.thumbnailView.getContext())
-                .load(mCursor.getString(ArticleLoader.Query.THUMB_URL))
-                .error(android.R.color.transparent)
-                .placeholder(android.R.color.transparent)
-                .into(holder.thumbnailView);
+            holder.thumbnailView.setImageUrl(
+                mCursor.getString(ArticleLoader.Query.THUMB_URL),
+                ImageLoaderHelper.getInstance(ArticleListActivity.this).getImageLoader());
+            holder.thumbnailView.setAspectRatio(mCursor.getFloat(ArticleLoader.Query.ASPECT_RATIO));
         }
 
         @Override
@@ -156,7 +153,7 @@ public class ArticleListActivity extends AppCompatActivity implements
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        public ImageView thumbnailView;
+        public DynamicHeightNetworkImageView thumbnailView;
         public TextView titleView;
         public TextView subtitleView;
 
