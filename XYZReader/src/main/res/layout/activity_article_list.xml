@@ -48,10 +48,10 @@
       android:scrollbarStyle="outsideOverlay"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
-      android:paddingLeft="@dimen/list_side_margin"
-      android:paddingRight="@dimen/list_side_margin"
       android:paddingTop="@dimen/list_side_margin"
       android:paddingBottom="@dimen/list_side_margin"
+      android:paddingLeft="@dimen/list_side_margin"
+      android:paddingRight="@dimen/list_side_margin"
       android:clipToPadding="false"/>
   </android.support.v4.widget.SwipeRefreshLayout>
 </android.support.design.widget.CoordinatorLayout>
